@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: estrong <estrong@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/02 16:49:30 by estrong           #+#    #+#             */
+/*   Updated: 2022/10/02 16:49:50 by estrong          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook() : _count(0), _contactIndex(0)	{
@@ -6,16 +18,21 @@ PhoneBook::PhoneBook() : _count(0), _contactIndex(0)	{
 PhoneBook::~PhoneBook()	{
 }
 
-void	Header()	const {
-	std::cout << "|     Index | First Name | Last Name | Nickname |" << std::endl;
-	std::cout << "|_______________________________________________|" << std::endl;
+
+void	PhoneBook::Header() const {
+
+	// std::cout << "|___________________________________________|" << std::endl;
+	std::cout << "|   Index | First Name | Last Name| Nickname|" << std::endl;
+	std::cout << "|___________________________________________|" << std::endl;
 	for (int i = 0; i < this->_count; i++)
 		this->_contacts[i].BriefInfo();
-	std::cout << "|_______________________________________________|" << std::endl;
+	std::cout << "|___________________________________________|" << std::endl;
+
 }
 
-bool	PhoneBook::addContact() {
-    if (!this->_contacts[this->_contactIndex].setData(this->_contactIndex + 1))
+bool	PhoneBook::addContact(void)	{
+
+	if (!this->_contacts[this->_contactIndex].setData(this->_contactIndex + 1))
 	{
 		std::cout << std::endl << "Contact №" << this->_contactIndex + 1 << " wasn't added" << std::endl;
 		return false;
@@ -34,8 +51,9 @@ bool	PhoneBook::addContact() {
 	return true;
 }
 
-bool	PhoneBook::searchContact() const {
-    size_t	index;
+bool	PhoneBook::searchContact(void) const {
+
+	size_t	index;
 
 	if (!this->_count)
 	{
@@ -60,7 +78,7 @@ bool	PhoneBook::searchContact() const {
 			std::cout << "The contact №";
 			std::cin.clear();
 		}
-		std::cin.ignore(std::numeric_limits < std::streamsize > std::max(), '\n');
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	}
 	else
 	{

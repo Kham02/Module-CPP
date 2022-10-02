@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: estrong <estrong@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/02 16:49:27 by estrong           #+#    #+#             */
+/*   Updated: 2022/10/02 16:49:53 by estrong          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Contact.hpp"
 
 std::string Contact::_DataNames[5] = {
@@ -22,7 +34,7 @@ bool	Contact::isNumber(const std::string& str) const
 {
     for (int i = 0; str[i]; i++)
     {
-        if (!sts::isdigit(str[i]))
+        if (!std::isdigit(str[i]))
             return false;
     }
     return true;

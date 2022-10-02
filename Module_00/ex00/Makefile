@@ -1,25 +1,41 @@
-NAME		=	megaphone
-
-SRCS		=	megaphone.cpp
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: estrong <estrong@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/10/02 16:50:04 by estrong           #+#    #+#              #
+#    Updated: 2022/10/02 16:55:39 by estrong          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 CC			=	c++
-
 FLAGS1		=	-Wall -Wextra -Werror
-
 FLAGS2		=	-std=c++98
-
 OPTFLAGS	=	-O2
 
-# HDRS		=
+RM			=	rm -rf
+
+# ------------------------------------------------------------------------------
+
+NAME		=	megaphone
+HDRS		=
+SRCS		=	megaphone.cpp
 OBJS	=	${SRCS:%.cpp=%.o}
 
+# ------------------------------------------------------------------------------
+
 READY	=	${NAME} is ready
-CLEAN	=	Directory was cleaned
-_GREEN	=	\e[0;32m
+SWEPT	=	Directory was cleaned
+_PURPLE	=	\e[0;35m
 _CYAN	=	\e[0;36m
 _END	=	\e[33m
 
-.PHONY:		re all clean fclean
+# ------------------------------------------------------------------------------
+
+#%.o:		%.cpp	${HDR}
+#			@${CC} ${FLAGS1} ${FLAGS2} ${OPTFLAGS} -c -o $@ $<
 
 ${NAME}:	${OBJS}
 			${CC} ${FLAGS1} ${FLAGS2} ${OPTFLAGS} ${SRCS} -o ${NAME}
@@ -36,3 +52,5 @@ fclean:		clean
 			@${RM} ${NAME}
 
 re:			fclean all
+
+.PHONY:		re all clean fclean

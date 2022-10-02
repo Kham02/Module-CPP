@@ -5,12 +5,10 @@
 #                                                     +:+ +:+         +:+      #
 #    By: estrong <estrong@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/02 16:49:36 by estrong           #+#    #+#              #
-#    Updated: 2022/10/02 16:49:43 by estrong          ###   ########.fr        #
+#    Created: 2022/10/02 16:49:38 by estrong           #+#    #+#              #
+#    Updated: 2022/10/02 16:49:46 by estrong          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-
 
 CC			=	c++
 FLAGS1		=	-Wall -Wextra -Werror
@@ -21,9 +19,9 @@ RM			=	rm -rf
 
 # ------------------------------------------------------------------------------
 
-NAME		=	PhoneBook
-HDRS		=	PhoneBook.h	PhoneBook.hpp	Contact.hpp
-SRCS		=	main.cpp	PhoneBook.cpp	Contact.cpp
+NAME		=	DreamWork
+HDRS		=	Account.hpp
+SRCS		=	tests.cpp	Account.cpp
 OBJS		=	${SRCS:%.cpp=%.o}
 
 # ------------------------------------------------------------------------------
